@@ -1,4 +1,6 @@
 package units;
+import behavior.ActionInterface;
+import java.util.ArrayList;
 
 public class Pikeman extends Person{
     public  Pikeman(String name, int x, int y) {
@@ -7,4 +9,10 @@ public class Pikeman extends Person{
     public void attack(Person person) {
         person.health -= this.power;
     }
+
+    @Override
+    public void step(ArrayList<Person> enemies) {
+
+    }
+
 }

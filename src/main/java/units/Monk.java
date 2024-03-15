@@ -1,4 +1,7 @@
 package units;
+import behavior.ActionInterface;
+
+import java.util.ArrayList;
 
 public class Monk extends Person{
     private int mana;
@@ -23,4 +26,9 @@ public class Monk extends Person{
         if (action == "heal") return healPrice;
         return 0;
     }
+    @Override
+    public void step(ArrayList<Person> enemies) {
+
+    }
+
 }

@@ -1,6 +1,9 @@
 package units;
+import java.util.ArrayList;
+import java.util.Random;
+import behavior.ActionInterface;
 
-public abstract class Person {
+public abstract class Person implements ActionInterface {
     protected String name;
     protected int health;
     protected int power;
@@ -32,12 +35,24 @@ public abstract class Person {
         return (className + " >>> " +  name + " (" + age + ") " + position.x + ":" + position.y );
 
     }
-   // public nearestEnemy()
-}
-// public void attack(Person person){
-//     person.health-=this.power;
-// }
-// public void heal(int val){
-//     this.health += val;
-// }
+    public Person findNearestPerson(ArrayList<Person> persons)
+    {
+        Person target = null;
+        float minDistance = Float.MAX_VALUE;
 
+        for (Person p : persons)
+        {
+            if (p.health > 0)
+            {
+                float dist = position.distanceTo(p.position);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    target = p;
+                }
+            }
+        }
+        return target;
+    }
+
+}

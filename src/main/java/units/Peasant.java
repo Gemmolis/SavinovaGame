@@ -1,4 +1,8 @@
 package units;
+import behavior.ActionInterface;
+
+import java.util.ArrayList;
+
 //Крестьянин
 public class Peasant extends Person {
     private int arrowsNum;
@@ -15,6 +19,9 @@ public class Peasant extends Person {
     public boolean isInGame() {
        return this.arrowsNum == 0 ? false : true; //проверка на наличие стрел
     }
+    @Override
+    public void step(ArrayList<Person> enemies) {
 
+    }
 
 }

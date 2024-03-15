@@ -1,5 +1,7 @@
 package units;
 
+import java.util.ArrayList;
+
 public class Wizard extends Person{
     private int mana;
     private int healVal;
@@ -28,4 +30,9 @@ public class Wizard extends Person{
         else if (action == "attack") return attackPrice;
         return 0;
     }
+    @Override
+    public void step(ArrayList<Person> enemies) {
+
+    }
+
 }
